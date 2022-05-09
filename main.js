@@ -3,8 +3,12 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-const hide = document.getElementById("modal").hidden = true;
-const articleHearts = document.querySelectorAll(".like-glyph");
+const modal = document.getElementById('modal')
+modal.className = 'hidden'
+
+const like = document.getElementsByClassName('like')
+
+
 function likeCallback(e) {
   const heart = e.target;
   mimicServerCall()
@@ -25,7 +29,6 @@ function likeCallback(e) {
 for (const glyph of articleHearts) {
   glyph.addEventListener("click", likeCallback);
 }
-
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
